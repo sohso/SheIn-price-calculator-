@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Calculator</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff; /* Set background color to white */
+        }
+
+        #calculator-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator-container">
+    <label for="inputNumber">Enter a number:</label>
+    <input type="text" id="inputNumber" oninput="calculateResult()">
+    <p id="result">Result will be displayed here</p>
+</div>
+
+<script>
+    function calculateResult() {
+        // Get the input value
+        var inputNumber = document.getElementById("inputNumber").value;
+
+        // Check if the input is a valid number
+        if (!isNaN(inputNumber)) {
+            // Perform the calculation
+            var result = parseFloat(inputNumber) * 11.5 + 15;
+
+            // Display the result
+            document.getElementById("result").innerText = "Result: " + result;
+        } else {
+            // Display an error message if the input is not a valid number
+            document.getElementById("result").innerText = "Please enter a valid number";
+        }
+    }
+</script>
+
+</body>
+</html>
